@@ -1,1 +1,1 @@
-export const APP_NAME = 'ATemplate';
+export const APP_NAME = 'contact-management';

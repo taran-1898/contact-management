@@ -1,7 +1,7 @@
 import { Service } from 'typedi';
 import { Middleware, ExpressMiddlewareInterface } from 'routing-controllers';
 
-import { Logger } from '@adhityan/gc-logger';
+
 
 @Service()
 @Middleware({ type: 'before' })
@@ -13,7 +13,7 @@ export class RequestLoggerMiddleWare implements ExpressMiddlewareInterface {
         next: () => Promise<unknown>,
     ): Promise<unknown> {
         response.startTime = new Date();
-        Logger.info(`Request ${request.url}`);
+        console.log(`Request ${request.url}`);
         return next();
     }
 }

@@ -1,6 +1,6 @@
 import { Service } from 'typedi';
 import { Middleware, ExpressMiddlewareInterface } from 'routing-controllers';
-import { Logger } from '@adhityan/gc-logger';
+
 
 import { UNKNOWN_ENDPOINT, httpStatusCodes } from '../constants';
 import { HealthResponse } from '../models';
@@ -17,6 +17,6 @@ export class ResponseLoggerMiddleware implements ExpressMiddlewareInterface {
         }
 
         const responseTime = new Date().getTime() - response.startTime.getTime();
-        Logger.info(`Response took ${responseTime}ms with status code ${response.statusCode}`);
+        console.log(`Response took ${responseTime}ms with status code ${response.statusCode}`);
     }
 }

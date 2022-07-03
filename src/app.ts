@@ -50,7 +50,7 @@ const start = async () => {
             },
             enableDocumentation: true,
             middlewares: <Function[]>ObjectUtils.getObjectValues(middlewares),
-            routePrefix: '/',
+            routePrefix: '/api',
         },
         Container,
     );

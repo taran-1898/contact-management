@@ -1,5 +1,5 @@
 import { config as loadEnvConfig } from 'dotenv';
-import { Logger } from '@adhityan/gc-logger';
+
 
 import { development } from './development.config';
 import { production } from './production.config';
@@ -19,7 +19,7 @@ const configs: { [key: string]: BaseConfig } = {
 };
 
 if (!configs[env]) {
-    Logger.error(`Configuration not found for ${env}, using development instead`);
+    console.log(`Configuration not found for ${env}, using development instead`);
     env = 'development';
 }
 

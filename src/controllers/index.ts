@@ -1,2 +1,3 @@
 export * from './health.controller';
-export * from './temperature.controller';
+export * from './user.controller';
+export * from './contact.controller'
