@@ -1,0 +1,53 @@
+# Default values for atemplate.
+replicaCount: 1
+nameOverride: ''
+
+image:
+    repository: "adhityan/atemplate:1.0.0"
+    pullPolicy: IfNotPresent
+
+    #using gc hub pull authentication overides all other provided pull secrets
+    fromGcHub: true
+    #These are only used if auth.docker.json is not found. For e.g. - in CI environment
+    hubCredentials:
+        username: ''
+        password: ''
+    pullSecrets: []
+
+service:
+    type: ClusterIP
+    port: 80
+
+ingress:
+    enabled: true
+    tls: true
+    host: atemplate.xxx.dev
+
+config:
+    environment: development
+
+certificates:
+    enabled: true
+
+podSecurityContext: 
+    fsGroup: 1000
+    # capabilities:
+    #   drop:
+    #   - ALL
+    # readOnlyRootFilesystem: true
+    runAsNonRoot: true
+    runAsUser: 1000
+
+resources: {}
+    # limits:
+    #     cpu: 100m
+    #     memory: 128Mi
+    # requests:
+    #     cpu: 50m
+    #     memory: 128Mi
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}

@@ -1,0 +1,12 @@
+{{- if .Values.image.fromGcHub }}
+apiVersion: v1
+kind: Secret
+metadata:
+  name: {{ include "atemplate.name" . }}-docker-config
+  namespace: {{.Release.Namespace}}
+  labels:
+    {{- include "atemplate.labels" . | nindent 4 }}
+data:
+  .dockerconfigjson: {{ include "atemplate.docker-config" . }}
+type: kubernetes.io/dockerconfigjson
+{{- end }}

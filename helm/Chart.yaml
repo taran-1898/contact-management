@@ -1,0 +1,24 @@
+#kubectl create namespace atemplate
+#kubectl config set-context --current --namespace=atemplate
+
+#helm install atemplate ./helm --namespace=atemplate --set ingress.hosts\[0\]=template.xxx.dev
+#helm install --dry-run atemplate ./helm --namespace=atemplate --set ingress.hosts\[0\]=atemplate.xxx.dev
+#helm upgrade --dry-run atemplate ./helm --namespace=atemplate --set ingress.hosts\[0\]=atemplate.xxx.dev
+#helm upgrade atemplate ./helm --namespace=atemplate --set ingress.hosts\[0\]=atemplate.xxx.dev
+#helm uninstall atemplate --namespace=atemplate 
+
+apiVersion: v1
+name: atemplate
+description: A helm chart for atemplate kubernetes deployment
+type: application
+
+dependencies:
+
+sources:
+  - https://github.com/adhityan/node-microsite-template
+
+maintainers:
+  - name: K V Adhityan
+    email: adhityan@hotmail.com
+
+version: 1.0.0

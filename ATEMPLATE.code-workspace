@@ -1,0 +1,36 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.exclude": {
+			"**/.cache": true,
+			"**/dist": true,
+			"yarn.lock": true,
+			"package-lock.json": true,
+			"**/data": true
+		},
+		"search.exclude": {
+			"dist": true,
+			"**/db": true,
+			"**/coverage": true,
+			"**/.cache": true,
+			"package-lock.json": true,
+			"yarn.lock": true
+		},
+		"editor.formatOnSave": true,
+		"files.autoSave": "onFocusChange",
+		"typescript.tsdk": "node_modules/typescript/lib",
+		"javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true
+	},
+	"extensions": {
+		"recommendations": [],
+		"unwantedRecommendations": []
+	},
+	"launch": {
+		"configurations": [],
+		"compounds": []
+	}
+}
